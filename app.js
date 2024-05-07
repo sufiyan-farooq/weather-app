@@ -3,6 +3,15 @@ let weatherIcon = document.getElementById('weather-icon')
 let search = document.getElementById('search')
 let weather = document.querySelector('.weather')
 
+
+
+window.onload = function(){
+
+    let loader = document.querySelector('.loader')
+    loader.style.display = 'none'
+    let content = document.querySelector('.main_content')
+    content.style.display = 'block'
+  }
 async function checkWeather(city){
 
     if(inputBox.value === ""){
@@ -85,7 +94,16 @@ async function checkWeather(city){
 
 checkWeather()
 
+
+inputBox.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent form submission
+        checkWeather(inputBox.value);
+    }
+});
+
 search.addEventListener("click", () => {
   checkWeather(inputBox.value)
   
 })
+
