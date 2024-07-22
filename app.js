@@ -31,6 +31,11 @@ async function checkWeather(city){
 
     console.log(weatherData);
     
+    let speech = new SpeechSynthesisUtterance();
+    speech.text = `The weather of ${weatherData.name} is ${Math.round(weatherData.main.temp)} Degrees Celsius` ;
+    window.speechSynthesis.speak(speech)
+
+    
     document.querySelector(".city").innerHTML = weatherData.name;
     document.querySelector(".temp").innerHTML = Math.round(weatherData.main.temp) + "°C";
     document.querySelector(".humiditypercent").innerHTML = weatherData.main.humidity + "%";
