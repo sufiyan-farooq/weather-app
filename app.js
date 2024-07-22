@@ -76,9 +76,14 @@ async function checkWeather(city){
         case "Mist":
         case "Fog":
             weatherIcon.src = "images/mist.png";
-            background.src = "asstes/mist.gif"
+            background.src = "asstes/haze.gif"
 
             break;
+            case "Haze":
+                weatherIcon.src = "images/Haze.png";
+                background.src = "asstes/mist.gif"
+    
+                break;
         default:
             // Default icon if weather condition doesn't match any case
             weatherIcon.src = "images/default.png";
