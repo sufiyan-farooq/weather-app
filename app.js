@@ -63,6 +63,11 @@ async function checkWeather(city){
             background.src = "asstes/drizzle.gif"
 
             break;
+            case "Smoke":
+                weatherIcon.src = "images/smoke.png";
+                background.src = "asstes/smoke.gif"
+    
+                break;
         case "Snow":
             weatherIcon.src = "images/snow.png";
             background.src = "asstes/snow.gif"
